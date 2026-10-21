@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Archivo de patrimonio censurado en Colombia: un archivo digital en construcción sobre obras, ideas y voces silenciadas." />
+    <title>Archivo de patrimonio censurado en Colombia</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <div class="site-shell">
+      <header class="site-header" aria-label="Encabezado principal">
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#coleccion">Colección</a>
+          <a href="#casos">Casos</a>
+        </nav>
+
+        <button class="icon-button search-trigger" type="button" aria-label="Abrir buscador">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6"></circle><path d="m16 16 5 5"></path></svg>
+        </button>
+        <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </header>
+
+      <main id="contenido">
+        <section class="section collection-section" id="coleccion" aria-labelledby="collection-title">
+          <div class="section-heading collection-heading">
+            <h2 id="collection-title">Museo Nacional</h2>
+            <p class="collection-heading-text">patrimonio censurado en el museo nacional....</p>
+          </div>
+
+          <div class="filter-row" aria-label="Filtrar colección">
+            <span class="filter-label">Consultar por</span>
+            <button class="filter-button is-active" type="button" data-filter="all">Todo el archivo</button>
+            <button class="filter-button" type="button" data-filter="memoria">Memoria y Nación</button>
+            <button class="filter-button" type="button" data-filter="sociedad">Hacer sociedad</button>
+            <button class="filter-button" type="button" data-filter="diversidad">Muro de la diversidad</button>
+            <button class="filter-button" type="button" data-filter="territorio">Tierra como recurso</button>
+          </div>
+
+          <div class="archive-layout" id="casos">
+            <div class="case-grid" id="case-grid" aria-live="polite">
+              <p class="loading-note">Cargando expedientes…</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>Archivo de patrimonio censurado en Colombia</span>
+        <span>Archivo digital en construcción</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
+
+    <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
+      <div class="panel-backdrop" data-close-search></div>
+      <div class="search-dialog">
+        <button class="close-button" type="button" aria-label="Cerrar buscador" data-close-search>×</button>
+        <p class="eyebrow">Buscar en el archivo</p>
+        <h2 id="search-title">¿Qué desea consultar?</h2>
+        <label class="search-field"><span class="sr-only">Buscar</span><input id="search-input" type="search" placeholder="Arte, prensa, libros…" autocomplete="off" /><span aria-hidden="true">⌕</span></label>
+        <p class="search-feedback" aria-live="polite">Escriba una palabra para filtrar las fichas visibles.</p>
+        <div class="search-results"></div>
+      </div>
+    </div>
+
+    <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title" hidden>
+      <div class="panel-backdrop" data-close-case></div>
+      <div class="case-dialog">
+        <button class="close-button" type="button" aria-label="Cerrar expediente" data-close-case>×</button>
+        <p class="eyebrow" id="case-modal-label">Ficha de archivo</p>
+        <div class="modal-media" id="case-modal-media"></div>
+        <h2 id="case-modal-title">Título del expediente</h2>
+        <div class="modal-rule"></div>
+        <p id="case-modal-description"></p>
+        <div class="modal-meta"><span id="case-modal-category"></span><span id="case-modal-period"></span></div>
+        <a class="text-link modal-source" id="case-modal-source" href="https://esferapublica.org/museo-nacional-obras-censuradas-de-la-sala-hacer-sociedad/" target="_blank" rel="noreferrer">Ver artículo de referencia <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
